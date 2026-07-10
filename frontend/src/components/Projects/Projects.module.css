@@ -1,0 +1,24 @@
+.Projects {
+  background: var(--white);
+  padding: 80px 48px;
+}
+
+.ProjectsInner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.ProjectsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .Projects {
+    padding: 50px 24px;
+  }
+  .ProjectsGrid {
+    grid-template-columns: 1fr;
+  }
+}

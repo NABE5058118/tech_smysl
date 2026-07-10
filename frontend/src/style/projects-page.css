@@ -1,0 +1,73 @@
+@import 'tailwindcss';
+
+.projects-page {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background: var(--dark);
+  color: #fff;
+}
+
+.projects-main {
+  flex: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+.projects-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 8px;
+}
+
+.projects-subtitle {
+  font-size: 16px;
+  color: #9ca3af;
+  margin: 0 0 40px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .projects-main {
+    padding: 50px 20px;
+  }
+
+  .projects-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-title {
+    font-size: 28px;
+  }
+
+  .projects-subtitle {
+    font-size: 14px;
+  }
+
+  .projects-main {
+    padding: 30px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-title {
+    font-size: 24px;
+  }
+
+  .projects-subtitle {
+    margin: 0 0 24px;
+  }
+
+  .projects-main {
+    padding: 24px 12px;
+  }
+}

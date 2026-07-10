@@ -1,0 +1,228 @@
+.admin {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.adminHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.siteLink {
+  color: var(--red);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.adminTitle {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--black);
+  margin: 0;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+
+.tabs button {
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.tabActive {
+  border-bottom-color: var(--red);
+  font-weight: 600;
+}
+
+.tabContent {
+  min-height: 400px;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.itemsGrid {
+  display: grid;
+  gap: 12px;
+}
+
+.itemCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #fafafa;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.itemTitle {
+  font-weight: 500;
+}
+
+.itemSlug {
+  color: var(--gray);
+  font-size: 14px;
+}
+
+.itemActions {
+  display: flex;
+  gap: 8px;
+}
+
+.itemActions button {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.bgSection {
+  margin: 16px 0;
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.bgSection p {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--gray);
+}
+
+.dropZone {
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  padding: 60px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  margin-top: 16px;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: var(--gray);
+}
+
+.dropZoneActive {
+  border-color: var(--red);
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #6b7280;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modalContent {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modalContent h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.modalContent input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.modalContent textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  min-height: 80px;
+  resize: vertical;
+}
+
+.itemStatus {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.formRow {
+  margin: 16px 0;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.toggle input {
+  width: 16px;
+  height: 16px;
+}
+
+.slidesSection {
+  margin-top: 16px;
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.slideItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 12px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.fileUploadSection {
+  margin: 16px 0;
+}

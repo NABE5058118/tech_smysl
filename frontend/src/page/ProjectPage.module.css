@@ -1,0 +1,129 @@
+.projectPage {
+  min-height: calc(100svh - 66px);
+  background: var(--dark);
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 40px 24px;
+}
+.projectPageBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.projectPageBg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.55);
+}
+.projectCard {
+  position: relative;
+  z-index: 1;
+  margin-left: auto;
+  max-width: 440px;
+  width: 100%;
+  background: rgba(192, 57, 43, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 22px;
+  padding: 30px 26px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.projectBack {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--red);
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.projectBack:hover {
+  color: var(--white);
+}
+.projectTitle {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  margin: 0;
+  color: var(--white);
+}
+.projectSubtitle {
+  font-size: 14px;
+  color: #fca5a5;
+  margin: 0;
+}
+.projectDesc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #fef2f2;
+}
+.projectSection h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: var(--white);
+}
+.projectSection p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #fca5a5;
+  margin: 0;
+}
+.projectBenefits {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.projectBenefits li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 13px;
+  color: #fef2f2;
+  line-height: 1.4;
+}
+.projectBenefits li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--red);
+}
+.projectTags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.projectTag {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--red);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+@media (max-width: 768px) {
+  .projectPage {
+    padding: 24px 12px;
+    justify-content: center;
+  }
+  .projectCard {
+    max-width: 100%;
+    padding: 24px 20px;
+  }
+  .projectTitle {
+    font-size: 24px;
+  }
+}

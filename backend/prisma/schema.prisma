@@ -1,0 +1,86 @@
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id          String   @id @default(cuid())
+  title       String
+  subtitle    String?
+  description String? @default("")
+  slug        String   @unique
+  heroImage   String?
+  bgImage     String?
+  imageUrl    String?
+  benefits    String[] @default([])
+  useCases    String?
+  tags        String[] @default([])
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  published   Boolean  @default(false)
+  order       Int      @default(0)
+}
+
+model Media {
+  id           String   @id @default(cuid())
+  filename     String
+  originalName String
+  mimeType     String
+  size         Int
+  url          String
+  type         MediaType @default(IMAGE)
+  createdAt    DateTime @default(now())
+}
+
+model Presentation {
+  id           String   @id @default(cuid())
+  title        String
+  description  String?
+  fileUrl      String
+  thumbnailUrl String?
+  slides       Slide[]
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  published    Boolean  @default(false)
+}
+
+model Slide {
+  id           String   @id @default(cuid())
+  title        String?
+  text         String?
+  imageUrl     String?
+  imageAlt     String?
+  order        Int      @default(0)
+  presentationId String
+  presentation Presentation @relation(fields: [presentationId], references: [id])
+}
+
+model HeroSlide {
+  id        String   @id @default(cuid())
+  imageUrl  String
+  imageAlt  String?
+  title     String?
+  subtitle  String?
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum MediaType {
+  IMAGE
+  VIDEO
+  DOCUMENT
+}
+
+model Setting {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String
+  type      String   @default("string")
+  updatedAt DateTime @updatedAt
+}

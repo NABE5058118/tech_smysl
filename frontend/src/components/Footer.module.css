@@ -1,0 +1,131 @@
+.footer {
+  background: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.footerWave {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+.footerWave svg {
+  width: 100%;
+  height: 120px;
+  display: block;
+}
+.footerBrand {
+  display: flex;
+  justify-content: center;
+  padding: 36px 24px 0;
+}
+.footerBrand img {
+  height: 40px;
+  filter: grayscale(100%) opacity(0.45);
+  transition:
+    filter 0.35s ease,
+    transform 0.35s ease;
+  cursor: pointer;
+}
+.footerBrand img:hover {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.06);
+}
+.footerInner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 48px 80px;
+}
+.footerTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.footerCols {
+  display: flex;
+  gap: 48px;
+}
+.footerCol {
+}
+.footerColHead {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footerLink {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray);
+  transition: color 0.2s;
+}
+.footerLink:hover {
+  color: var(--red);
+}
+
+.footerSocials {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.footerSoc {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-light);
+  transition:
+    color 0.2s,
+    background 0.2s;
+}
+.footerSoc:hover {
+  color: var(--red);
+  background: #f5f5f5;
+}
+
+.footerDivider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0 0 24px;
+}
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.footerCopy {
+  font-size: 12px;
+  color: var(--gray-light);
+}
+.footerDisc {
+  font-size: 12px;
+  color: var(--gray-light);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .footerInner {
+    padding: 40px 24px 60px;
+  }
+  .footerTop {
+    flex-direction: column;
+  }
+  .footerCols {
+    flex-direction: column;
+    gap: 28px;
+  }
+  .footerBottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
