@@ -1,4 +1,5 @@
 import { type FC } from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '../assets/logo.svg';
 import styles from './Footer.module.css';
 import { useI18n } from '../i18n/i18n';
@@ -79,12 +80,9 @@ const Footer: FC = () => {
         </svg>
       </div>
       <div className={styles.footerBrand}>
-        <img
-          src={Logo}
-          alt={t.header.logoAlt}
-          onClick={() => window.scrollTo(0, 0)}
-          style={{ cursor: 'pointer' }}
-        />
+        <Link to="/" aria-label={t.header.logoAlt}>
+          <img src={Logo} alt={t.header.logoAlt} />
+        </Link>
       </div>
       <div className={styles.footerInner}>
         <div className={styles.footerTop}>

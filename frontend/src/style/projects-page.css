@@ -1,3 +1,4 @@
+@import './GlobalTokens.module.css';
 @import 'tailwindcss';
 
 .projects-page {
@@ -5,7 +6,7 @@
   display: flex;
   flex-direction: column;
   background: var(--dark);
-  color: #fff;
+  color: var(--white);
 }
 
 .projects-main {
@@ -18,13 +19,13 @@
 .projects-title {
   font-size: 42px;
   font-weight: 800;
-  color: #fff;
+  color: var(--white);
   margin: 0 0 8px;
 }
 
 .projects-subtitle {
   font-size: 16px;
-  color: #9ca3af;
+  color: var(--gray-light);
   margin: 0 0 40px;
 }
 

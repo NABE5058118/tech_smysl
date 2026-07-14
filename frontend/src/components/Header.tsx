@@ -1,5 +1,6 @@
 import { useState, useEffect, type FC } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import Logo from '../assets/logo.svg';
 import styles from './Header.module.css';
 import { useI18n } from '../i18n/i18n';
@@ -36,12 +37,9 @@ const Header: FC = () => {
     <header className={styles.navbar}>
       <div className={styles.navbarContainer}>
         <div className={styles.navLogo}>
-          <img
-            src={Logo}
-            alt={t.header.logoAlt}
-            onClick={() => window.scrollTo(0, 0)}
-            style={{ cursor: 'pointer' }}
-          />
+          <Link to="/" aria-label={t.header.logoAlt}>
+            <img src={Logo} alt={t.header.logoAlt} />
+          </Link>
         </div>
 
         <nav className={styles.navMenu}>

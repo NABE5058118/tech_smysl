@@ -55,9 +55,9 @@ interface HeroSlide {
 }
 
 const AdminPage: FC = () => {
-  const [activeTab, setActiveTab] = useState<'projects' | 'presentations' | 'media' | 'heroSlides'>(
-    'projects',
-  );
+  const [activeTab, setActiveTab] = useState<
+    'projects' | 'presentations' | 'media' | 'heroSlides' | 'settings'
+  >('projects');
   const [projects, setProjects] = useState<Project[]>([]);
   const [media, setMedia] = useState<MediaItem[]>([]);
   const [presentations, setPresentations] = useState<Presentation[]>([]);
@@ -65,6 +65,7 @@ const AdminPage: FC = () => {
   const [editingProject, setEditingProject] = useState<Project | null>(null);
   const [editingPresentation, setEditingPresentation] = useState<Presentation | null>(null);
   const [editingHeroSlide, setEditingHeroSlide] = useState<HeroSlide | null>(null);
+  const [ctaVideoUrl, setCtaVideoUrl] = useState('');
   const [dragActive, setDragActive] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -85,6 +86,11 @@ const AdminPage: FC = () => {
       setMedia(mediaData);
       setPresentations(presData);
       setHeroSlides(heroSlidesData);
+      const ctaVideoRes = await fetch('/api/settings/ctaVideo').catch(() => null);
+      if (ctaVideoRes) {
+        const ctaVideo = await ctaVideoRes.json().catch(() => null);
+        if (ctaVideo) setCtaVideoUrl(ctaVideo);
+      }
     } catch (err) {
       console.error(err);
     } finally {
@@ -503,6 +509,12 @@ const AdminPage: FC = () => {
         >
           Медиафайлы
         </button>
+        <button
+          className={activeTab === 'settings' ? styles.tabActive : ''}
+          onClick={() => setActiveTab('settings')}
+        >
+          Настройки
+        </button>
       </div>
 
       <div className={styles.tabContent}>
@@ -645,6 +657,45 @@ const AdminPage: FC = () => {
                   <button onClick={() => void handleMediaDelete(m.id)}>🗑️</button>
                 </div>
               ))}
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'settings' && (
+          <div>
+            <h2>Настройки сайта</h2>
+            <div className={styles.formRow}>
+              <label style={{ display: 'block', marginBottom: 8, fontWeight: 500 }}>
+                Видео для CTA секции
+              </label>
+              <select
+                value={ctaVideoUrl}
+                onChange={(e) => setCtaVideoUrl(e.target.value)}
+                className={styles.modalInput}
+              >
+                <option value="">- Выберите видео -</option>
+                {media
+                  .filter((m) => m.type === 'VIDEO')
+                  .map((m) => (
+                    <option key={m.id} value={m.url}>
+                      {m.originalName}
+                    </option>
+                  ))}
+              </select>
+              <button
+                className="btn btn-primary"
+                style={{ marginTop: 12 }}
+                onClick={async () => {
+                  await fetch('/api/settings/ctaVideo', {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ value: ctaVideoUrl }),
+                  });
+                  alert('Сохранено!');
+                }}
+              >
+                Сохранить
+              </button>
             </div>
           </div>
         )}

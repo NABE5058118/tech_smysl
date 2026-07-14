@@ -14,9 +14,14 @@
   margin: 0 auto;
   gap: 40px;
 }
-.navLogo img {
-  height: 36px;
-  cursor: pointer;
+.navLogo {
+  a {
+    display: block;
+    cursor: pointer;
+  }
+  img {
+    height: 36px;
+  }
 }
 
 .navMenu {

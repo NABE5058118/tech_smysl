@@ -18,6 +18,11 @@
   justify-content: center;
   padding: 36px 24px 0;
 }
+
+.footerBrand a {
+  display: block;
+  cursor: pointer;
+}
 .footerBrand img {
   height: 40px;
   filter: grayscale(100%) opacity(0.45);

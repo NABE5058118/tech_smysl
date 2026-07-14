@@ -17,7 +17,7 @@ export const getSettingByKey = async (req: Request, res: Response) => {
     const setting = await prisma.setting.findUnique({
       where: { key: req.params.key },
     });
-    if (!setting) return res.status(404).json({ error: 'Setting not found' });
+    if (!setting) return res.status(200).json(null);
     res.json(setting);
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch setting' });

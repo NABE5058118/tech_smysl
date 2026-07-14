@@ -18,16 +18,16 @@
 
 .btn-primary {
   background: var(--red);
-  color: #fff;
+  color: var(--white);
 }
 .btn-primary:hover {
   box-shadow: 0 8px 24px rgba(192, 57, 43, 0.35);
 }
 
 .btn-secondary {
-  background: #1c1c1c;
-  color: #fff;
-  border: 1px solid #333;
+  background: var(--dark);
+  color: var(--white);
+  border: 1px solid var(--border-dark);
 }
 .btn-secondary:hover {
   border-color: var(--red);
@@ -41,7 +41,7 @@
 }
 .btn-outline-white {
   background: transparent;
-  color: #fff;
+  color: var(--white);
   border: 1.5px solid rgba(255, 255, 255, 0.35);
   padding: 8px 20px;
   border-radius: 50px;
@@ -53,7 +53,7 @@
 .btn-outline-sm {
   background: transparent;
   color: var(--black);
-  border: 1.5px solid #ccc;
+  border: 1.5px solid var(--border);
   padding: 6px 18px;
   border-radius: 50px;
   font-size: 14px;

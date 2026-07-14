@@ -179,6 +179,13 @@
   resize: vertical;
 }
 
+.modalInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
 .itemStatus {
   display: block;
   margin-top: 4px;

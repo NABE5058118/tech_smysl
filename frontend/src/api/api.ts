@@ -31,4 +31,10 @@ export const api = {
     },
     delete: (id: string) => fetch(`${API_URL}/hero-slides/${id}`, { method: 'DELETE' }),
   },
+settings: {
+    get: (key: string) =>
+      fetch(`${API_URL}/settings/${key}`)
+        .then((r) => r.json())
+        .then((d) => d?.value || null),
+  },
 };
